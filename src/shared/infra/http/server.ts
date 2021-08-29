@@ -12,7 +12,7 @@ import '@shared/container';
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use('/files', express.static(uploadConfig.tmpFolder));
+app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(routes);
 
 app.use((err, req: Request, res: Response, next: NextFunction) => {
@@ -24,10 +24,10 @@ app.use((err, req: Request, res: Response, next: NextFunction) => {
   }
   return res.status(500).json({
     status: 'error',
-    message: 'Internal Server Error',
+    message: err.message,
   });
 });
 
 app.listen(3333, () => {
-  console.log('🚀 Server Started !!!');
+  console.log('🚀 Server Started!!!');
 });
