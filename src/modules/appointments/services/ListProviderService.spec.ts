@@ -3,11 +3,10 @@ import 'reflect-metadata';
 import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUserRepository';
 import ListProvidersService from './ListProvidersService';
 
-import AppError from '@shared/errors/AppError';
 let fakeUsersRepository: FakeUsersRepository;
 let listProviders: ListProvidersService;
 
-describe('UpdateUserAvatar', () => {
+describe('ListProviders', () => {
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
 
